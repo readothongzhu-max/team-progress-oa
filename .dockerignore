@@ -1,0 +1,7 @@
+.git
+.env
+data
+backups
+qa
+node_modules
+*.log

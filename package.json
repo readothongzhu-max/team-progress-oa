@@ -1,0 +1,15 @@
+{
+  "name": "team-progress-oa",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "小团队项目进度与每周汇报",
+  "engines": { "node": ">=24.15.0" },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.mjs",
+    "dev": "node --env-file-if-exists=.env --watch server.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check server.mjs && node --check lib/core.mjs && node --check lib/github.mjs && node --check web/app.js",
+    "backup": "node scripts/backup.mjs"
+  }
+}

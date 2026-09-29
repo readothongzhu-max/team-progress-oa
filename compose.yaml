@@ -1,0 +1,17 @@
+services:
+  oa:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3210:3210"
+    environment:
+      HOST: 0.0.0.0
+      PORT: 3210
+      DATA_DIR: /app/data
+      APP_ORIGIN: ${APP_ORIGIN:-http://localhost:3210}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      GITHUB_TOKEN: ${GITHUB_TOKEN:-}
+    volumes:
+      - oa_data:/app/data
+volumes:
+  oa_data:
